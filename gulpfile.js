@@ -28,15 +28,14 @@ let config = {
 let paths ={
   styles: {
     src: "src/assets/css/**/*.{sass,scss}",
-    dest: "_dist/css"
+    dest: "_dist/"
   },
   fonts: {
     src: "src/assets/fonts/**",
     dest: "_dist/fonts"
   },
   html: {
-    src: "src/**/*.pug",
-    exclude: "!src/includes/*.pug",
+    src: "src/**/*.html",
     dest: "_dist/"
   },
   images: {
@@ -76,15 +75,7 @@ function style() {
     .pipe(browserSync.stream());
 }
 function html() {
-  return gulp
-    .src([
-      paths.html.src,
-      paths.html.exclude
-    ])
-    .pipe(pug({
-      pretty: true
-    }))
-    .pipe(plumber())
+  return gulp.src(paths.html.src)
     .pipe(gulp.dest(paths.html.dest));
 }
 function font() {
@@ -208,7 +199,7 @@ exports.scriptsMinify = scriptsMinify
 exports.ghPages = ghPages
 
 let build = gulp.parallel([html, fonts, scriptsMinify, fonts], style, images,);
-let buildWatch = gulp.series(gulp.parallel([html, fonts, scripts, fonts]), images, style, watch);
+let buildWatch = gulp.series(gulp.parallel([fonts, scripts, fonts]), html, images, style, watch);
 let staticBuild = gulp.series(cleanDist, build)
 
 gulp.task('default', gulp.series(cleanDist, buildWatch))

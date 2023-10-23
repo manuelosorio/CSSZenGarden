@@ -7,6 +7,37 @@
     header { ... }
 
 
+h3
+  font: 800 100px 'Mid Century Sans'
+  position: relative
+  color: #edd135
+  &:before
+    position: absolute
+    top: -5px /* adjust to get the desired offset */
+    left: -5px /* adjust to get the desired offset */
+    color: transparent
+    -webkit-background-clip: text
+    background-clip: text
+    visibility: visible
+    -webkit-text-stroke: 2px #000
 
+
+#zen-preamble h3:before
+  content: 'The Road to Enlightenment'
+
+#zen-explanation h3:before
+  content: 'So What is This About?'
+#zen-requirements h3:before
+  content: 'Requirements'
+#zen-resources h3:before
+  content: 'Resources'
+#design-archives h3:before
+  content: 'Archives:'
+#zen-participation h3:before
+  content: 'Participation'
+#zen-benefits h3:before
+  content: 'Benefits'
+#design-selection h3:before
+  content: 'Select a Design'
 
 /*----------------------  End Base  ----------------------*/
