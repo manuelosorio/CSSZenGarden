@@ -198,11 +198,11 @@ exports.scripts = scripts
 exports.scriptsMinify = scriptsMinify
 exports.ghPages = ghPages
 
-let build = gulp.parallel([html], style/*, images,*/);
+let build = gulp.series([html], style/*, images,*/);
 let buildWatch = gulp.series(gulp.parallel([fonts, scripts, fonts]), html, images, style, watch);
 let staticBuild = gulp.series(cleanDist, build)
 
 gulp.task('default', gulp.series(cleanDist, buildWatch))
 gulp.task('static', gulp.series(staticBuild))
 // scriptsMinify
-gulp.task('deploy', gulp.series(staticBuild, ghPages));
+gulp.task('deploy', gulp.series(cleanDist, build, build, ghPages));

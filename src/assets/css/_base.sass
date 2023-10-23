@@ -6,31 +6,46 @@
   Example:
     header { ... }
 
+*
+  box-sizing: border-box
+  &:before, &:after
+    box-sizing: border-box
+
+html
+  font-size: 100%
+
+body
+  font: 400 1rem/1.5 'Mid Century Sans', sans-serif
+
+#zen-intro
+  h2
+    @extend h3
+    &:before
+      content: 'The Beauty of CSS Design'
 
 h3
-  font: 800 100px 'Mid Century Sans'
+  font: 800 4rem 'Mid Century Sans'
   position: relative
   color: #edd135
   &:before
     position: absolute
-    top: -5px /* adjust to get the desired offset */
-    left: -5px /* adjust to get the desired offset */
+    top: -4px
+    left: -4px
     color: transparent
     -webkit-background-clip: text
     background-clip: text
     visibility: visible
-    -webkit-text-stroke: 2px #000
+    -webkit-text-stroke: 1px #111
 
 
 #zen-preamble h3:before
   content: 'The Road to Enlightenment'
-
 #zen-explanation h3:before
   content: 'So What is This About?'
 #zen-requirements h3:before
   content: 'Requirements'
 #zen-resources h3:before
-  content: 'Resources'
+  content: 'Resources:'
 #design-archives h3:before
   content: 'Archives:'
 #zen-participation h3:before
@@ -38,6 +53,48 @@ h3
 #zen-benefits h3:before
   content: 'Benefits'
 #design-selection h3:before
-  content: 'Select a Design'
+  content: 'Select a Design:'
+
+
+#design-selection
+  a
+    color: #111111
+  .design-name
+    font-size: 1.35rem
+    font-weight: 600
+    margin: 0.5rem 0
+
+  ul
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+  li
+    list-style: none
+    height: 150px
+    width: 26%
+    border-radius: 30% 70% 44% 56% / 54% 59% 41% 46%
+    border: 1px solid
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 1rem
+    margin: 1rem 0.5rem
+    &:before
+      content: ""
+      display: block
+      border-radius: 30% 70% 44% 56%/54% 59% 41% 46%
+      height: 100%
+      width: 100%
+      background: #edd135
+      position: absolute
+      top: 0
+      z-index: -1
+      top: -5px
+      left: -5px
+    a
+      margin: 0 0.5rem
+a
+  text-decoration: none
 
 /*----------------------  End Base  ----------------------*/

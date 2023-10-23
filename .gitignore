@@ -70,8 +70,9 @@ typings/
 /.idea/workspace.xml
 /.idea/codeStyles/codeStyleConfig.xml
 
-!/.publish/
+!/.publish/.gitkeep
 /.publish/*
+
 # IDEs and editors
 /.idea
 .project
