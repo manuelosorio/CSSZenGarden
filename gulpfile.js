@@ -23,7 +23,7 @@ const packer = require("@hail2u/css-mqpacker");
 const purgeCSS = require('@fullhuman/postcss-purgecss');
 
 let config = {
-  cname: 'starter-kit.manuelosorio.me'
+  cname: ''
 }
 let paths ={
   styles: {
@@ -175,7 +175,7 @@ function ghPages() {
   return publish(
     ".publish",
     {
-      remoteUrl: "https://github.com/manuelosorio/starter-kit.git",
+      remoteUrl: "git@github.com:manuelosorio/GRA2143-Project-2-CSS-Zen-Garden.git",
       branch: 'gh-pages',
       // cacheDir: '.publish',
       message: 'Update ' + new Date().toISOString()
@@ -198,7 +198,7 @@ exports.scripts = scripts
 exports.scriptsMinify = scriptsMinify
 exports.ghPages = ghPages
 
-let build = gulp.parallel([html, fonts, scriptsMinify, fonts], style, images,);
+let build = gulp.parallel([html], style/*, images,*/);
 let buildWatch = gulp.series(gulp.parallel([fonts, scripts, fonts]), html, images, style, watch);
 let staticBuild = gulp.series(cleanDist, build)
 
