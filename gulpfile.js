@@ -23,7 +23,7 @@ const packer = require("@hail2u/css-mqpacker");
 const purgeCSS = require('@fullhuman/postcss-purgecss');
 
 let config = {
-  cname: ''
+  cname: 'zen-garden.manuelosorio.me'
 }
 let paths ={
   styles: {
