@@ -215,4 +215,4 @@ let staticBuild = gulp.series(cleanDist, build)
 gulp.task('default', gulp.series(cleanDist, buildWatch))
 gulp.task('static', gulp.series(staticBuild))
 // scriptsMinify
-gulp.task('deploy', gulp.series(cleanDist, build, build, ghPages));
+gulp.task('deploy', gulp.series(cleanDist, gulp.series(build, ghPages)));
