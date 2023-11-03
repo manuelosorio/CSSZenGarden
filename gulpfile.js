@@ -95,8 +95,18 @@ async function images() {
         gulpImagemin.optipng({ optimizationLevel: 5 }),
         gulpImagemin.svgo({
           plugins: [
-            { removeViewBox: false },
-            { collapseGroups: true }
+            {
+              name: "removeViewBox",
+              active: false
+            },
+            {
+              name: "cleanupIDs",
+              active: true
+            },
+            {
+              name: "collapseGroups",
+              active: true
+            }
           ]
         })
       ])
@@ -198,8 +208,8 @@ exports.scripts = scripts
 exports.scriptsMinify = scriptsMinify
 exports.ghPages = ghPages
 
-let build = gulp.series([html], style/*, images,*/);
-let buildWatch = gulp.series(gulp.parallel([fonts, scripts, fonts]), html, images, style, watch);
+let build = gulp.series([html], style, images);
+let buildWatch = gulp.series(gulp.parallel([fonts, images, fonts]), html,  style, watch);
 let staticBuild = gulp.series(cleanDist, build)
 
 gulp.task('default', gulp.series(cleanDist, buildWatch))
