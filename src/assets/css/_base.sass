@@ -5,24 +5,19 @@
 
   Example:
     header { ... }
-
 *
   box-sizing: border-box
   &:before, &:after
     box-sizing: border-box
-
 html
   font-size: 100%
-
 body
   font: 400 1rem/1.5 'Mid Century Sans', sans-serif
-
 #zen-intro
   h2
     @extend h3
     &:before
       content: 'The Beauty of CSS Design'
-
 h3
   font: 800 4rem 'Mid Century Sans'
   position: relative
@@ -36,24 +31,6 @@ h3
     background-clip: text
     visibility: visible
     -webkit-text-stroke: 1px #111
-
-
-#zen-preamble h3:before
-  content: 'The Road to Enlightenment'
-#zen-explanation h3:before
-  content: 'So What is This About?'
-#zen-requirements h3:before
-  content: 'Requirements'
-#zen-resources h3:before
-  content: 'Resources:'
-#design-archives h3:before
-  content: 'Archives:'
-#zen-participation h3:before
-  content: 'Participation'
-#zen-benefits h3:before
-  content: 'Benefits'
-#design-selection h3:before
-  content: 'Select a Design:'
 
 
 #design-selection
