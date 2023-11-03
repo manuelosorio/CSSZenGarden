@@ -480,22 +480,33 @@ a {
  * html code:
  * <section class="l-container"> ... </section> */
 /*----------------------  End Layout  ----------------------*/
-/*----------------------  4 [Modules]  ---------------------- */
-/**
- * Module code style naming conventions
- *
- * .module__element--modifier { ... }
- *
- * sass written as:
- * .module
- *   ...
- *  &__element
- *     ...
- *    &--modifier
- *       ...
- *
- * html syntax:
- * <div class="module module__element--modifier"> ... </div> */
+.intro {
+  margin: 2rem 0;
+}
+
+.intro h1 {
+  color: transparent;
+  font-size: 0;
+  position: relative;
+  height: 12.5rem;
+  width: 100%;
+}
+
+.intro h1:after {
+  content: "";
+  display: block;
+  background: url("images/Logo.svg") no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+}
+
 /*----------------------  End Modules  ---------------------- */
 /*----------------------  5 [States]  ---------------------- */
 /*----------------------  End States  ---------------------- */
