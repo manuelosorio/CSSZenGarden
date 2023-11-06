@@ -1,3 +1,5 @@
+@use "utilites/custom-properties"
+@use "variables"
 /*----------------------  2 [Base]  ----------------------
 /**
   Base syntax should not contain any classes, id or use attribute selectors of any kind.
@@ -9,6 +11,12 @@
   box-sizing: border-box
   &:before, &:after
     box-sizing: border-box
+  + *
+    margin: 0
+    padding: 0
+\:root
+  +custom-properties.create-property("color-yellow", "#FED955")
+  +custom-properties.create-property("color-red", "#C4423F")
 html
   font-size: 100%
 body
@@ -19,58 +27,30 @@ body
     &:before
       content: 'The Beauty of CSS Design'
 h3
+  +custom-properties.create-property("section-heading-color", variables.$color-yellow)
   font: 800 4rem 'Mid Century Sans'
   position: relative
-  color: #edd135
+  margin: 0
+  color: var(--section-heading-color)
   &:before
     position: absolute
-    top: -4px
-    left: -4px
+    top: 2px
+    left: 3px
     color: transparent
     -webkit-background-clip: text
     background-clip: text
     visibility: visible
     -webkit-text-stroke: 1px #111
+p
+  margin: 0
+  padding: 0
+  + p
+    margin-block-start: 2em
+div[role="article"]
+  +custom-properties.create-property("section-background-color", variables.$color-red)
+  background-color: var(--section-background-color)
 
 
-#design-selection
-  a
-    color: #111111
-  .design-name
-    font-size: 1.35rem
-    font-weight: 600
-    margin: 0.5rem 0
-
-  ul
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-  li
-    list-style: none
-    height: 150px
-    width: 26%
-    border-radius: 30% 70% 44% 56% / 54% 59% 41% 46%
-    border: 1px solid
-    position: relative
-    display: flex
-    justify-content: center
-    align-items: center
-    padding: 1rem
-    margin: 1rem 0.5rem
-    &:before
-      content: ""
-      display: block
-      border-radius: 30% 70% 44% 56%/54% 59% 41% 46%
-      height: 100%
-      width: 100%
-      background: #edd135
-      position: absolute
-      top: 0
-      z-index: -1
-      top: -5px
-      left: -5px
-    a
-      margin: 0 0.5rem
 a
   text-decoration: none
 
