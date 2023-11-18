@@ -1,6 +1,6 @@
 @use "utilites/custom-properties"
 @use "variables"
-/*----------------------  2 [Base]  ----------------------
+/*!----------------------  2 [Base]  ----------------------
 /**
   Base syntax should not contain any classes, id or use attribute selectors of any kind.
   Resets or basic styles for elements belong here
@@ -17,17 +17,13 @@
 \:root
   +custom-properties.create-property("color-yellow", "#FED955")
   +custom-properties.create-property("color-red", "#C4423F")
+  +custom-properties.create-property("color-sea-green", "#2EC4B6")
+  +custom-properties.create-property("section-heading-color", variables.$color-yellow)
 html
   font-size: 100%
 body
   font: 400 1rem/1.5 'Mid Century Sans', sans-serif
-#zen-intro
-  h2
-    @extend h3
-    &:before
-      content: 'The Beauty of CSS Design'
-h3
-  +custom-properties.create-property("section-heading-color", variables.$color-yellow)
+h2, h3
   font: 800 4rem 'Mid Century Sans'
   position: relative
   margin: 0
@@ -41,6 +37,7 @@ h3
     background-clip: text
     visibility: visible
     -webkit-text-stroke: 1px #111
+    padding: inherit
 p
   margin: 0
   padding: 0
@@ -49,9 +46,6 @@ p
 div[role="article"]
   +custom-properties.create-property("section-background-color", variables.$color-red)
   background-color: var(--section-background-color)
-
-
 a
   text-decoration: none
-
-/*----------------------  End Base  ----------------------*/
+/*!----------------------  End Base  ----------------------

@@ -1,0 +1,16 @@
+@use '../variables';
+
+@mixin section-mixing($color) {
+  @if $color == "white" {
+    --section-background-color: white;
+    --section-heading-color: #{variables.$color-sea-green};
+  } @else if $color == "yellow" {
+    --section-background-color: #{variables.$color-yellow};
+    --section-heading-color: #{variables.$color-red};
+  } @else if $color == "green" {
+    --section-background-color: #{variables.$color-sea-green};
+    --section-heading-color: #{variables.$color-yellow};
+  } @else {
+    @error "Invalid color";
+  }
+}
