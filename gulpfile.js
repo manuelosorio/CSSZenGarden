@@ -180,10 +180,10 @@ function watch() {
 function ghPages() {
   gulp.src("./_dist/**/*")
     .pipe(file('CNAME', config.cname))
-    .pipe(gulp.dest('./.publish'));
+    .pipe(gulp.dest('./_publish'));
 
   return publish(
-    ".publish",
+    "_publish",
     {
       remoteUrl: "git@github.com:manuelosorio/GRA2143-Project-2-CSS-Zen-Garden.git",
       branch: 'gh-pages',
