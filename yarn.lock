@@ -1243,10 +1243,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/gh-pages@^3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@types/gh-pages/-/gh-pages-3.2.1.tgz#0c47e024774461fce161570bca309c51d787ef67"
-  integrity sha512-y5ULkwfoOEUa6sp2te+iEODv2S//DRiKmxpeXboXhhv+s758rSSxLUiBd6NnlR7aAY4nw1X4FGovLrSWEXWLow==
+"@types/gh-pages@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@types/gh-pages/-/gh-pages-5.0.1.tgz#56996ef5006eb0b035e4f2e309c42b2678908a0c"
+  integrity sha512-1TmxtmLXVBH/PmoqUQJNiwNC0Jq64OD3bxaNq91beZaKiYAulzW9OQs9cT/Oz2Nk+BOSLZqvPiRj0/5j3VCFcA==
 
 "@types/json-schema@^7.0.9":
   version "7.0.12"
@@ -4113,10 +4113,10 @@ get-value@^2.0.3, get-value@^2.0.6:
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha512-Ln0UQDlxH1BapMu3GPtf7CuYNwRZf2gwCuPqbyG6pB8WfmFpzqcy4xtAaAMUhnNqjMKTiCPZG2oMT3YSx8U2NA==
 
-gh-pages@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/gh-pages/-/gh-pages-6.0.0.tgz#3bb46ea13dc7cee306662db0d3f02bf05635cdc1"
-  integrity sha512-FXZWJRsvP/fK2HJGY+Di6FRNHvqFF6gOIELaopDjXXgjeOYSNURcuYwEO/6bwuq6koP5Lnkvnr5GViXzuOB89g==
+gh-pages@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/gh-pages/-/gh-pages-6.1.0.tgz#e842426edf8bc19f1209ac6ba7af10cda35383ea"
+  integrity sha512-MdXigvqN3I66Y+tAZsQJMzpBWQOI1snD6BYuECmP+GEdryYMMOQvzn4AConk/+qNg/XIuQhB1xNGrl3Rmj1iow==
   dependencies:
     async "^3.2.4"
     commander "^11.0.0"

@@ -24,10 +24,9 @@ jobs:
         token: ${{secrets.PAT}}
     - name: Deploy with gh-pages
       run: |
+        mkdir -p .publish && mkdir -p _dist && ls
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        mkdir -p .publish && mkdir -p _dist
         npm install
         npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
-        ls
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
