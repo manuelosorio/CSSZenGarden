@@ -22,9 +22,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         token: ${{secrets.PAT}}
-    - uses: webfactory/ssh-agent@v0.8.0
-      with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    #- uses: webfactory/ssh-agent@v0.8.0
+    #  with:
+    #      ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: Deploy with gh-pages
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
