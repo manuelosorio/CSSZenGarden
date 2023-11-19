@@ -22,13 +22,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         token: ${{secrets.PAT}}
-    #- uses: webfactory/ssh-agent@v0.8.0
-    #  with:
-    #      ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: Deploy with gh-pages
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        mkdir -p .publish
+        mkdir -p .publish && mkdir -p _dist
         npm install
         npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         ls
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
