@@ -214,7 +214,7 @@ let staticBuild = gulp.series(cleanDist, build)
 gulp.task('default', gulp.series(cleanDist, buildWatch))
 gulp.task('static', gulp.series(staticBuild))
 // scriptsMinify
-gulp.task('deploy', gulp.series(gulp.series([fonts, html, fonts], style, images), function() {
+gulp.task('deploy', gulp.series(gulp.series([images, html, images], style, images), function() {
   return gulp.src("./_dist/**/*")
     .pipe(file('CNAME', config.cname))
     .pipe(gulp.dest('./.publish/'))
