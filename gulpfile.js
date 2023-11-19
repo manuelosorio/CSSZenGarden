@@ -188,6 +188,7 @@ function ghPages() {
       remoteUrl: "git@github.com:manuelosorio/GRA2143-Project-2-CSS-Zen-Garden.git",
       branch: 'gh-pages',
       // cacheDir: '.publish',
+      nojekyll: true,
       message: 'Update ' + new Date().toISOString()
     },
     (err) => {
@@ -215,4 +216,4 @@ let staticBuild = gulp.series(cleanDist, build)
 gulp.task('default', gulp.series(cleanDist, buildWatch))
 gulp.task('static', gulp.series(staticBuild))
 // scriptsMinify
-gulp.task('deploy', gulp.series(cleanDist, gulp.series(build, ghPages)));
+gulp.task('deploy', gulp.series(gulp.series(build, ghPages)));
