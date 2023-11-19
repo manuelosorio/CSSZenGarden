@@ -177,17 +177,15 @@ function watch() {
   gulp.watch(paths.html.src, html).on('change', browserSync.reload);
 }
 
-function ghPages() {
-  gulp.src("./_dist/**/*")
-    .pipe(file('CNAME', config.cname))
-    .pipe(gulp.dest('./_publish'));
 
+
+function ghPages() {
   return publish(
-    "_publish",
+    ".publish",
     {
       remoteUrl: "git@github.com:manuelosorio/GRA2143-Project-2-CSS-Zen-Garden.git",
       branch: 'gh-pages',
-      // cacheDir: '.publish',
+      cacheDir: '.publish',
       nojekyll: true,
       message: 'Update ' + new Date().toISOString()
     },
@@ -196,7 +194,7 @@ function ghPages() {
         console.log(err)
       }
     }
-  );
+  )
 }
 
 exports.cleanDist = cleanDist
@@ -216,4 +214,8 @@ let staticBuild = gulp.series(cleanDist, build)
 gulp.task('default', gulp.series(cleanDist, buildWatch))
 gulp.task('static', gulp.series(staticBuild))
 // scriptsMinify
-gulp.task('deploy', gulp.series(gulp.series([fonts, html, fonts], style, images, ghPages)));
+gulp.task('deploy', gulp.series(gulp.series([fonts, html, fonts], style, images), function() {
+  return gulp.src("./_dist/**/*")
+    .pipe(file('CNAME', config.cname))
+    .pipe(gulp.dest('./.publish/'))
+}, ghPages));
