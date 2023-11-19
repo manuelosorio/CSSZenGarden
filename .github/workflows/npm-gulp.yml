@@ -26,9 +26,12 @@ jobs:
       run: |
         mkdir -p _publish/ && mkdir -p _dist/ && ls
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        git config user.name "github-actions-bot"
-        git config user.email "support+actions@github.com"
+        git config user.name "${NAME}"
+        git config user.email "${EMAIL}"
         npm install
-        npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        npm run deploy -- -u "${NAME
+        } <${EMAIL}>"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        EMAIL: ${{ secrets.EMAIL }}
+        NAME: ${{ secrets.NAME }}
