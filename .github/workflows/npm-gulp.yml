@@ -26,7 +26,6 @@ jobs:
       run: |
         mkdir -p _publish/ && mkdir -p _dist/ && ls
         git remote set-url origin git@github.com:${GITHUB_REPOSITORY}.git
-        git@github.com:manuelosorio/GRA2143-Project-2-CSS-Zen-Garden.git
         git config user.name "${NAME}"
         git config user.email "${EMAIL}"
         npm install
