@@ -29,8 +29,7 @@ jobs:
         git config user.name "${NAME}"
         git config user.email "${EMAIL}"
         npm install
-        npm run deploy -- -u "${NAME
-        } <${EMAIL}>"
+        npm run deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         EMAIL: ${{ secrets.EMAIL }}
