@@ -22,8 +22,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         token: ${{secrets.PAT}}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+    - uses: webfactory/ssh-agent@v0.8.0
+      with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: Build
       run: |
         mkdir -p .publish
