@@ -586,12 +586,48 @@ a {
   width: 100lvw;
 }
 
+#zen-summary {
+  padding: 1rem 2rem;
+}
+
 #zen-summary, #zen-intro h2 {
   --section-background-color: var(--color-yellow);
+  --section-heading-color: var(--color-sea-green);
+}
+
+#zen-participation, #zen-benefits, #design-selection {
+  --section-background-color: white;
   --section-heading-color: var(--color-red);
 }
 
-.button, #zen-summary a, .button--round {
+#zen-preamble, #zen-explanation, #zen-requirements, #design-archives, #zen-resources {
+  --section-background-color: var(--color-sea-green);
+  --section-heading-color: var(--color-yellow);
+}
+
+#zen-preamble, #zen-explanation, #zen-requirements, #design-archives, #zen-resources, #zen-participation, #zen-benefits, #design-selection {
+  background: var(--section-background-color);
+}
+
+#design-archives ul {
+  list-style: none;
+  padding: 2rem;
+  margin: 0;
+}
+#design-archives ul li {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+#design-archives ul li a {
+  --link__color: #black ;
+  color: var(--link__color);
+}
+#design-archives ul li a:hover {
+  color: var(--link__color);
+  text-decoration: underline;
+}
+
+.button, #zen-resources .view-css a, #zen-summary a, #design-archives a, .button--round, .zen-accessibility, .zen-validate-html, .zen-validate-css, .zen-license, .zen-github {
   display: inline-block;
   padding: 0.25rem 1.5rem;
   --button__background: var(--section-heading-color) ;
@@ -604,30 +640,99 @@ a {
   -webkit-transition-delay: 100ms;
           transition-delay: 100ms;
   margin: auto 0.75rem;
+  --offset: -5px ;
 }
-.button:before, #zen-summary a:before, .button--round:before {
+.button:before, #zen-resources .view-css a:before, #zen-summary a:before, #design-archives a:before, .button--round:before, .zen-accessibility:before, .zen-validate-html:before, .zen-validate-css:before, .zen-license:before, .zen-github:before {
   content: "";
   border: 1px solid #111;
-  height: 100%;
   width: 100%;
+  height: 100%;
   position: absolute;
-  top: -3px;
-  left: -3px;
+  top: var(--offset);
+  left: var(--offset);
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
 }
-.button:hover, #zen-summary a:hover, .button--round:hover {
-  top: -3px;
-  left: -3px;
+.button:hover, #zen-resources .view-css a:hover, #zen-summary a:hover, #design-archives a:hover, .button--round:hover, .zen-accessibility:hover, .zen-validate-html:hover, .zen-validate-css:hover, .zen-license:hover, .zen-github:hover {
+  top: var(--offset);
+  left: var(--offset);
 }
-.button:hover:before, #zen-summary a:hover:before, .button--round:hover:before {
+.button:hover:before, #zen-resources .view-css a:hover:before, #zen-summary a:hover:before, #design-archives a:hover:before, .button--round:hover:before, .zen-accessibility:hover:before, .zen-validate-html:hover:before, .zen-validate-css:hover:before, .zen-license:hover:before, .zen-github:hover:before {
   top: 0;
   left: 0;
 }
-.button--round {
+.button--round, .zen-accessibility, .zen-validate-html, .zen-validate-css, .zen-license, .zen-github {
   border-radius: 50%;
-  height: 1rem;
-  width: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 1rem;
+  color: transparent;
+  --button-icon: url($icon-a11y);
+}
+.button--round:before, .zen-accessibility:before, .zen-validate-html:before, .zen-validate-css:before, .zen-license:before, .zen-github:before {
+  border-radius: inherit;
+}
+.button--round:after, .zen-accessibility:after, .zen-validate-html:after, .zen-validate-css:after, .zen-license:after, .zen-github:after {
+  content: "";
+  background-image: var(--button-icon);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#zen-resources ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 1rem;
+}
+#zen-resources .view-css {
+  display: block;
+  width: 100%;
+}
+#zen-resources .view-css a {
+  color: #111;
+}
+#zen-resources a {
+  color: #111;
+}
+
+.zen-accessibility, .zen-validate-html, .zen-validate-css, .zen-license, .zen-github {
+  width: 5.5rem;
+  height: 5.5rem;
+  --button__background: var(--color-sea-green);
+  margin: 1rem;
+}
+.zen-accessibility {
+  --button-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtcGVyc29uLXN0YW5kaW5nIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjUiIHI9IjEiLz48cGF0aCBkPSJtOSAyMCAzLTYgMyA2Ii8+PHBhdGggZD0ibTYgOCA2IDIgNi0yIi8+PHBhdGggZD0iTTEyIDEwdjQiLz48L3N2Zz4=);
+}
+.zen-validate-html {
+  --button-icon: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHN0cm9rZS13aWR0aD0iMS41IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00IDNMNS43Nzc3OCAyMC4wODk5TDEyIDIyTDE4LjIyMjIgMjAuMDg5OUwyMCAzSDRaIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNyA3SDcuNUw4IDExLjVIMTZMMTUuNSAxN0wxMiAxOEw4LjUgMTdMOC4yNSAxNC41IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPg==);
+}
+.zen-validate-css {
+  --button-icon: url();
+}
+.zen-license {
+  --button-icon: url();
+}
+.zen-github {
+  --button-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWdpdGh1YiI+PHBhdGggZD0iTTE1IDIydi00YTQuOCA0LjggMCAwIDAtMS0zLjVjMyAwIDYtMiA2LTUuNS4wOC0xLjI1LS4yNy0yLjQ4LTEtMy41LjI4LTEuMTUuMjgtMi4zNSAwLTMuNSAwIDAtMSAwLTMgMS41LTIuNjQtLjUtNS4zNi0uNS04IDBDNiAyIDUgMiA1IDJjLS4zIDEuMTUtLjMgMi4zNSAwIDMuNUE1LjQwMyA1LjQwMyAwIDAgMCA0IDljMCAzLjUgMyA1LjUgNiA1LjUtLjM5LjQ5LS42OCAxLjA1LS44NSAxLjY1LS4xNy42LS4yMiAxLjIzLS4xNSAxLjg1djQiLz48cGF0aCBkPSJNOSAxOGMtNC41MSAyLTUtMi03LTIiLz48L3N2Zz4=);
 }
 
 /*!----------------------  End Modules  ---------------------- */
