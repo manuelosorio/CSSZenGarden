@@ -591,6 +591,45 @@ a {
   --section-heading-color: var(--color-red);
 }
 
+.button, #zen-summary a, .button--round {
+  display: inline-block;
+  padding: 0.25rem 1.5rem;
+  --button__background: var(--section-heading-color) ;
+  --button__color: #ededed ;
+  background: var(--button__background);
+  color: var(--button__color);
+  position: relative;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+  margin: auto 0.75rem;
+}
+.button:before, #zen-summary a:before, .button--round:before {
+  content: "";
+  border: 1px solid #111;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+.button:hover, #zen-summary a:hover, .button--round:hover {
+  top: -3px;
+  left: -3px;
+}
+.button:hover:before, #zen-summary a:hover:before, .button--round:hover:before {
+  top: 0;
+  left: 0;
+}
+.button--round {
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+}
+
 /*!----------------------  End Modules  ---------------------- */
 /*!----------------------  3 [States]  ---------------------- */
 /*!----------------------  End States  ---------------------- */
