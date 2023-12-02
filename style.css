@@ -12,7 +12,7 @@
  * 4 [Modules]
  * 5 [States] */
 /*!----------------------  1 [Vendor]  ---------------------- */
-@import url("https://osorio-css-zen-garden.s3.amazonaws.com/fonts.css");
+@import url("https://osorio-css-zen-garden.s3.amazonaws.com/fonts.css?v=4");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -359,11 +359,11 @@ html {
 }
 
 body {
-  font: 400 1rem/1.5 "Mid Century Sans", sans-serif;
+  font: 400 1rem/1.5 "Gotham", sans-serif;
 }
 
 h2, h3 {
-  font: 800 4rem "Mid Century Sans";
+  font: 800 4rem "Gotham";
   position: relative;
   margin: 0;
   color: var(--section-heading-color);
@@ -627,6 +627,24 @@ a {
   text-decoration: underline;
 }
 
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
 .button, #zen-resources .view-css a, #zen-summary a, #design-archives a, .button--round, .zen-accessibility, .zen-validate-html, .zen-validate-css, .zen-license, .zen-github {
   display: inline-block;
   padding: 0.25rem 1.5rem;
@@ -723,13 +741,13 @@ a {
   --button-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtcGVyc29uLXN0YW5kaW5nIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjUiIHI9IjEiLz48cGF0aCBkPSJtOSAyMCAzLTYgMyA2Ii8+PHBhdGggZD0ibTYgOCA2IDIgNi0yIi8+PHBhdGggZD0iTTEyIDEwdjQiLz48L3N2Zz4=);
 }
 .zen-validate-html {
-  --button-icon: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHN0cm9rZS13aWR0aD0iMS41IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00IDNMNS43Nzc3OCAyMC4wODk5TDEyIDIyTDE4LjIyMjIgMjAuMDg5OUwyMCAzSDRaIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNyA3SDcuNUw4IDExLjVIMTZMMTUuNSAxN0wxMiAxOEw4LjUgMTdMOC4yNSAxNC41IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPg==);
+  --button-icon: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjMDAwIj48cGF0aCBkPSJtMTIuMDAwNSAyMi43MWMtLjE2IDAtLjMyLS4wMi0uNDgtLjA3bC02LjA4MDAxLTEuNzRjLS42OS0uMi0xLjE4MDAxLS43OC0xLjI2MDAxLTEuNDlsLTEuNzk5OTktMTYuMjJjLS4wNS0uNDkuMS0uOTkuNDQtMS4zNi4zMy0uMzcuODA5OTktLjU4IDEuMjk5OTktLjU4aDE1Ljc3MDAyYy41IDAgLjk3LjIxIDEuMy41OHMuNDkuODcuNDQgMS4zNmwtMS44IDE2LjIyYy0uMDguNzEtLjU3IDEuMjktMS4yNiAxLjQ5bC02LjA4IDEuNzRjLS4xNy4wNS0uMzMuMDctLjQ5LjA3em0tNy44ODAwMi0xOS45NmMtLjEgMC0uMTYuMDUtLjE5LjA4cy0uMDcuMS0uMDYuMTlsMS43OTk5OSAxNi4yMmMuMDEuMS4wNzk5OS4xOS4xNzk5OS4yMWw2LjA4MDA0IDEuNzRjLjA0LjAxLjA5LjAxLjE0IDBsNi4wOC0xLjc0Yy4xLS4wMy4xNy0uMTEuMTgtLjIxbDEuOC0xNi4yMmMuMDEtLjEtLjA0LS4xNi0uMDYtLjE5LS4wMy0uMDMtLjA5LS4wOC0uMTktLjA4eiIvPjxwYXRoIGQ9Im0xMS43NDk4IDE4Yy0uMDcgMC0uMTQtLjAxLS4yMS0uMDNsLTMuNS0xYy0uMzItLjA5LS41Mzk5OC0uMzktLjUzOTk4LS43MnYtMmMwLS40MS4zNC0uNzUuNzUtLjc1cy43NS4zNC43NS43NXYxLjQzbDIuNzQ5OTguNzkgMi44LS44LjM3LTMuNjdoLTYuNjY5OThjLS4zOCAwLS43LS4yOS0uNzUtLjY3bC0uNS00LjVjLS4wMi0uMjEuMDQwMDEtLjQyLjE5MDAxLS41OC4xNC0uMTYuMzQ5OTktLjI1LjU1OTk5LS4yNWg4LjQ5OTk4Yy40MSAwIC43NS4zNC43NS43NXMtLjM0Ljc1LS43NS43NWgtNy42NTk5NWwuMzI5OTYgM2g2LjgyOTk5Yy4yMSAwIC40MS4wOS41Ni4yNS4xNC4xNi4yMS4zNy4xOS41OGwtLjUgNWMtLjAzLjMxLS4yNC41Ni0uNTQuNjVsLTMuNSAxYy0uMDcuMDEtLjE0LjAyLS4yMS4wMnoiLz48L2c+PC9zdmc+);
 }
 .zen-validate-css {
-  --button-icon: url();
+  --button-icon: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjE1IiB2aWV3Qm94PSIwIDAgMTUgMTUiIHdpZHRoPSIxNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtLjUuNXYtLjVjLS4xMzk4MjYgMC0uMjczMjY0LjA1ODU0OTgtLjM2Nzk0MS4xNjE0NDUtLjA5NDY3NzYuMTAyODk2LS4xNDE5NDM3Ny4yNDA3MzUtLjEzMDMzMTg3LjM4MDA3OHptMTQgMCAuNDk4My4wNDE1MjNjLjAxMTYtLjEzOTM0My0uMDM1Ny0uMjc3MTgyLS4xMzA0LS4zODAwNzgtLjA5NDYtLjEwMjg5NTItLjIyODEtLjE2MTQ0NS0uMzY3OS0uMTYxNDQ1em0tMSAxMiAuMTU4MS40NzQzYy4xODk4LS4wNjMyLjMyMzYtLjIzMzUuMzQwMi0uNDMyOHptLTYgMi0uMTU4MTEuNDc0M2MuMTAyNjMuMDM0My4yMTM1OS4wMzQzLjMxNjIyIDB6bS02LTItLjQ5ODI3LjA0MTVjLjAxNjYxLjE5OTMuMTUwNDEuMzY5Ni4zNDAxNi40MzI4em05LTloLjV2LS41aC0uNXptMCA2IC4xNTgxLjQ3NDM0LjM0MTktLjExMzk2di0uMzYwMzh6bS0zIDEtLjE1ODExLjQ3NDMuMTU4MTEuMDUyNy4xNTgxMS0uMDUyN3ptLTMtMWgtLjV2LjM2MDM4bC4zNDE4OS4xMTM5NnptLTQtOC41aDE0di0xaC0xNHptMTMuNTAxNy0uNTQxNTIzLTEgMTIuMDAwMDIzLjk5NjYuMDgzIDEtMTEuOTk5OTc3em0tLjY1OTggMTEuNTY3MjIzLTYuMDAwMDEgMiAuMzE2MjIuOTQ4NiA1Ljk5OTk5LTJ6bS01LjY4Mzc5IDItNi0yLS4zMTYyMi45NDg2IDYgMnptLTUuNjU5ODQtMS41NjcyLS45OTk5OTctMTIuMDAwMDIzLS45OTY1NDU4Ny4wODMwNDYgMS4wMDAwMDI4NyAxMS45OTk5Nzd6bTguNTAxNzMtOS40NTg1aC02LjV2MWg2LjV6bS00LjUgNGg0LjV2LTFoLTQuNXptNC0uNXYzaDF2LTN6bS4zNDE5IDIuNTI1NjYtMy4wMDAwMSAxLjAwMDA0LjMxNjIyLjk0ODYgMi45OTk5OS0uOTk5OTZ6bS0yLjY4Mzc5IDEuMDAwMDQtMy0xLjAwMDA0LS4zMTYyMi45NDg2OCAzIC45OTk5NnptLTIuNjU4MTEtLjUyNTd2LTEuNWgtMXYxLjV6bTUtNnYzaDF2LTN6IiBmaWxsPSIjMDAwIi8+PC9zdmc+);
 }
 .zen-license {
-  --button-icon: url();
+  --button-icon: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHN0cm9rZS13aWR0aD0iMS41IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJaIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMC41IDkuMTcwNzFDMTAuMTg3MiA5LjA2MDE1IDkuODUwNjQgOSA5LjUgOUM3Ljg0MzE1IDkgNi41IDEwLjM0MzEgNi41IDEyQzYuNSAxMy42NTY5IDcuODQzMTUgMTUgOS41IDE1QzkuODUwNjQgMTUgMTAuMTg3MiAxNC45Mzk4IDEwLjUgMTQuODI5MyIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTYuNzUgOS4xNzA3MUMxNi40MzcyIDkuMDYwMTUgMTYuMTAwNiA5IDE1Ljc1IDlDMTQuMDkzMSA5IDEyLjc1IDEwLjM0MzEgMTIuNzUgMTJDMTIuNzUgMTMuNjU2OSAxNC4wOTMxIDE1IDE1Ljc1IDE1QzE2LjEwMDYgMTUgMTYuNDM3MiAxNC45Mzk4IDE2Ljc1IDE0LjgyOTMiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==);
 }
 .zen-github {
   --button-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWdpdGh1YiI+PHBhdGggZD0iTTE1IDIydi00YTQuOCA0LjggMCAwIDAtMS0zLjVjMyAwIDYtMiA2LTUuNS4wOC0xLjI1LS4yNy0yLjQ4LTEtMy41LjI4LTEuMTUuMjgtMi4zNSAwLTMuNSAwIDAtMSAwLTMgMS41LTIuNjQtLjUtNS4zNi0uNS04IDBDNiAyIDUgMiA1IDJjLS4zIDEuMTUtLjMgMi4zNSAwIDMuNUE1LjQwMyA1LjQwMyAwIDAgMCA0IDljMCAzLjUgMyA1LjUgNiA1LjUtLjM5LjQ5LS42OCAxLjA1LS44NSAxLjY1LS4xNy42LS4yMiAxLjIzLS4xNSAxLjg1djQiLz48cGF0aCBkPSJNOSAxOGMtNC41MSAyLTUtMi03LTIiLz48L3N2Zz4=);
