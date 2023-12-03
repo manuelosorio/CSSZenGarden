@@ -24,13 +24,12 @@ html
 body
   font: 400 1rem/1.5 'Gotham', sans-serif
 h2, h3
-  font: 800 4rem 'Gotham'
+  font: 800 2.85rem 'Gotham'
   position: relative
   margin: 0
   color: var(--section-heading-color)
   &:before
     position: absolute
-    font: 800 4rem 'Gotham'
     top: 2px
     left: 3px
     color: transparent
@@ -39,6 +38,9 @@ h2, h3
     visibility: visible
     -webkit-text-stroke: 1px #111
     padding: inherit
+  +breakpoint-min("md")
+    font-size: 4rem
+
 p
   margin: 0
   padding: 0
