@@ -1,22 +1,22 @@
 @use "../variables"
-@use "../utilites"
+@use "../utilities"
 
 .button
   display: inline-block
   padding: 0.25rem 1.5rem
-  +utilites.create-property("button__background", var(--section-heading-color))
-  +utilites.create-property("button__color", #ededed)
+  +utilities.create-property("button__background", var(--section-heading-color))
+  +utilities.create-property("button__color", #ededed)
   background: var(--button__background)
   color: var(--button__color)
   position: relative
   transition: 200ms ease-in-out
   transition-delay: 100ms
   margin: auto 0.75rem
-  +utilites.create-property("offset", -5px)
+  +utilities.create-property("offset", -5px)
   &:before
     content: ''
     border: 1px solid #111
-    +utilites.size(100%)
+    +utilities.size(100%)
     position: absolute
     top: var(--offset)
     left: var(--offset)
@@ -30,7 +30,7 @@
   &--round
     @extend .button
     border-radius: 50%
-    +utilites.size(2.5rem)
+    +utilities.size(2.5rem)
     padding: 1rem
     //font-size: 0
     color: transparent
@@ -47,7 +47,7 @@
       position: absolute
       top: 50%
       left: 50%
-      +utilites.size(50%)
+      +utilities.size(50%)
       transform: translate(-50%, -50%)
 
 #zen-summary a, #design-archives a
@@ -73,7 +73,7 @@
 .zen
   &-accessibility, &-validate-html, &-validate-css, &-license, &-github
     @extend .button--round
-    +utilites.size(5.5rem)
+    +utilities.size(5.5rem)
     --button__background: #{variables.$color-sea-green}
     margin: 1rem
   &-accessibility

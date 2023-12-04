@@ -1,4 +1,4 @@
-@use "../utilites"
+@use "../utilities"
 
 $svg-fill: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEzIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMjEzIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTQuNzM0NiAxNS4yOTg5QzI4LjkzMjMgMy4wMDU1OSAxNTEuNTYxIC04LjM3OTIgMTk1LjY0OCAxMi4wOTA5QzIxOC4zNCAyMi42MjcxIDIxNy45MDggODQuMzE5NSAxOTIuMDE0IDg0LjMxOTVDMTE1LjMyMiA4NC4zMTk1IDQ0LjgzMTcgMTAyLjk0NCAxOC4wMyA5Mi4wNDJDLTguNzcxODQgODEuMTM5NiAwLjUzNjkxOSAyNy41OTIzIDE0LjczNDYgMTUuMjk4OVoiIGZpbGw9IiNGRUQ5NTUiLz4KPC9zdmc+Cg=="
 
@@ -15,13 +15,13 @@ $svg-stroke: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEzIiBoZWlnaHQ9Ijk2IiB2
     display: grid
     gap: 1rem
     list-style: none
-    +utilites.create-property("column-count", 1)
+    +utilities.create-property("column-count", 1)
     grid-template-columns: repeat(var(--column-count), 1fr)
-    +utilites.breakpoint-min("md")
+    +utilities.breakpoint-min("md")
       --column-count: 2
-    +utilites.breakpoint-min("lg")
+    +utilities.breakpoint-min("lg")
       --column-count: 3
-    +utilites.breakpoint-min("xl")
+    +utilities.breakpoint-min("xl")
       --column-count: 4
 
   li

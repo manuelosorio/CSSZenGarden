@@ -1,5 +1,5 @@
 @use "../variables"
-@use "../utilites"
+@use "../utilities"
 
 
 .page-wrapper
@@ -8,18 +8,18 @@
 
 #zen
   &-summary, &-intro h2
-    +utilites.section-mixing("yellow")
+    +utilities.section-mixing("yellow")
   &-participation, &-benefits, #design-selection
-    +utilites.section-mixing("white")
+    +utilities.section-mixing("white")
   &-preamble, &-explanation, &-requirements, &-resources, #design-archives
-    +utilites.section-mixing("green")
+    +utilities.section-mixing("green")
   &-preamble, &-explanation, &-requirements, #design-archives, &-resources, &-participation, &-benefits, #design-selection
     background: var(--section-background-color)
   &-intro h2
     background-color: var(--section-background-color)
     position: relative
     padding: 2.25rem 0 0
-    +utilites.container
+    +utilities.container
     &:after
       content: ''
       display: block
@@ -34,7 +34,9 @@
       width: 100lvw
   &-summary
     padding: 1rem 2rem
-
+  &-explanation
+    p
+      +utilities.container
 
 
 #design
@@ -47,7 +49,7 @@
       display: inline-block
       margin: 0 0.5rem
       a
-        +utilites.create-property("link__color", #black)
+        +utilities.create-property("link__color", #black)
         color: var(--link__color)
         &:hover
           color: var(--link__color)
