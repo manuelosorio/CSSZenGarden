@@ -1,3 +1,4 @@
+@use "../utilities"
 .intro
   margin: 0
   h1
@@ -5,7 +6,8 @@
     font-size: 0
     position: relative
     height: 12.5rem
-    width: 100%
+    width: 90%
+    margin: 1.5rem auto 1.25rem
     &:after
       content: ""
       display: block
@@ -17,3 +19,6 @@
       transform: translate(-50%, -50%)
       height: 100%
       width: 100%
+      padding: 1rem 3rem
+      +utilities.breakpoint-min("md")
+        left: 50%

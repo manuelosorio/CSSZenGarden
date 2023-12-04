@@ -1,0 +1,118 @@
+/*----------------------  3 [Layout]  ----------------------*/
+@use "utilities";
+//.page-wrapper {
+//  overflow-x: hidden;
+//  display: grid;
+//  grid-template-columns: repeat(6, 1fr);
+//  grid-template-areas:
+//    "intro intro intro intro intro intro"
+//    "preamble preamble preamble preamble preamble preamble"
+//  "supporting supporting supporting supporting supporting supporting";
+//}
+//.into {
+//  grid-area: intro;
+//}
+//.preamble {
+//  grid-area: preamble;
+//}
+//.supporting {
+//  grid-area: supporting;
+//}
+.sidebar .wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "selection selection selection selection"
+    "archives archives archives archives"
+    "resources resources resources resources";
+  @include utilities.breakpoint-min("md") {
+    row-gap: 2.5rem;
+    grid-template-areas:
+    "selection selection selection selection"
+    "archives archives resources resources";
+  }
+}
+.design-selection {
+  grid-area: selection;
+}
+.design-archives {
+  //display: flex;
+  //flex-direction: column;
+  //align-items: flex-end;
+  grid-area: archives;
+  padding: 0 2rem;
+  @include utilities.breakpoint-min("md") {
+    padding: 0;
+  }
+
+  h3, nav {
+    width: 100%;
+    @include utilities.breakpoint-min("md") {
+      width: 75%;
+      margin-left: auto;
+    }
+  }
+}
+.zen-resources {
+  grid-area: resources;
+  padding: 0 2rem;
+  @include utilities.breakpoint-min("md") {
+    padding: 0;
+  }
+}
+
+.main.supporting {
+  display: flex;
+  flex-direction: column;
+  @include utilities.breakpoint-min("md") {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+    "explanation explanation explanation explanation explanation explanation explanation explanation"
+    "participation participation participation participation participation benefits benefits benefits"
+    "requirements requirements requirements requirements requirements requirements requirements requirements"
+    "footer footer footer footer footer footer footer footer";
+  }
+}
+.explanation {
+  grid-area: explanation;
+
+}
+.participation {
+  grid-area: participation;
+  @include utilities.breakpoint-min("md") {
+    p {
+      line-height: 1.40;
+      + p {
+        --m-top: 1rem;
+      }
+    }
+  }
+}
+.benefits {
+  grid-area: benefits;
+  @include utilities.breakpoint-min("md") {
+    margin-left: -2.25rem;
+    p {
+      //letter-spacing: 1px;
+      line-height: 1.75;
+    }
+  }
+}
+.requirements {
+  grid-area: requirements;
+  h3, p {
+    @include utilities.container;
+  }
+  @include utilities.breakpoint-min("md") {
+    margin-left: -2.25rem;
+    p {
+      //letter-spacing: 1px;
+      line-height: 1.75;
+    }
+  }
+}
+footer {
+  grid-area: footer;
+}
+/*----------------------  End Layout  ----------------------*/

@@ -1,15 +1,27 @@
+@use "sass:color";
 @use '../variables';
 
 @mixin section-mixing($color) {
   @if $color == "white" {
-    --section-background-color: white;
+    --section-background-color: transparent;
     --section-heading-color: #{variables.$color-red};
+    --link__color: var(--section-heading-color);
   } @else if $color == "yellow" {
     --section-background-color: #{variables.$color-yellow};
     --section-heading-color: #{variables.$color-sea-green};
+    --link__color: var(--section-heading-color);
+    a {
+      color: #{variables.$color-sea-green};
+    }
   } @else if $color == "green" {
     --section-background-color: #{variables.$color-sea-green};
     --section-heading-color: #{variables.$color-yellow};
+    a {
+      --link__color: #{variables.$color-white};
+      &:hover {
+        background: lighten(#111, 20%);
+      }
+    }
   } @else {
     @error "Invalid color";
   }

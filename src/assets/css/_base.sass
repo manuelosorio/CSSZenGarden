@@ -16,40 +16,58 @@
     padding: 0
 \:root
   +utilities.create-property("color-yellow", "#FED955")
+  +utilities.create-property("color-yellow-200", "#feca12")
+  +utilities.create-property("color-yellow-300", "#ca9e01")
   +utilities.create-property("color-red", "#C4423F")
   +utilities.create-property("color-sea-green", "#2EC4B6")
+  +utilities.create-property("color-white", "#F3E8EE")
   +utilities.create-property("section-heading-color", variables.$color-yellow)
+  +utilities.create-property("m-top", 0)
 html
   font-size: 100%
 body
   font: 400 1rem/1.5 'Gotham', sans-serif
+  background: variables.$color-white
 h2, h3
-  font: 800 3rem 'Mid Century Sans','Gotham', sans-serif
+  font: 800 2.5rem 'Mid Century Sans','Gotham', sans-serif
   position: relative
   margin: 0
   padding: 1.25rem 0
   color: var(--section-heading-color)
+  +utilities.breakpoint-min("md")
+    font-size: 3.5rem
   &:before
     position: absolute
-    top: 2px
-    left: 3px
+    top: -2px
+    left: -2px
     color: transparent
     -webkit-background-clip: text
     background-clip: text
     visibility: visible
     -webkit-text-stroke: 1px #111
     padding: inherit
-  +utilities.breakpoint-min("md")
-    font-size: 4rem
+    +utilities.breakpoint-min("md")
+      top: -3px
+      left: -3px
 
 p
   margin: 0
   padding: 0
   + p
-    margin-block-start: 2em
+    --m-top: 1.25em
 div[role="article"]
-  +utilities.create-property("section-background-color", variables.$color-red)
+  padding: 0.25rem 0
+  h3, p
+    @include utilities.container
+  //+utilities.create-property("section-background-color", variables.$color-red)
   background-color: var(--section-background-color)
 a
   text-decoration: none
+  opacity: .85
+  color: var(--link__color)
+  transition: 200ms ease-in-out
+  padding: 0.25em 0
+  &:hover
+    text-decoration: underline
+    opacity: 1
 /*!----------------------  End Base  ----------------------

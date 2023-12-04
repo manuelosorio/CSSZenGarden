@@ -1,19 +1,12 @@
 @use "../variables"
 @use "../utilities"
 
-
-.page-wrapper
-  overflow-x: hidden
-
-
 #zen
   &-summary, &-intro h2
     +utilities.section-mixing("yellow")
-  &-participation, &-benefits, #design-selection
+  &-participation, &-benefits
     +utilities.section-mixing("white")
-  &-preamble, &-explanation, &-requirements, &-resources, #design-archives
-    +utilities.section-mixing("green")
-  &-preamble, &-explanation, &-requirements, #design-archives, &-resources, &-participation, &-benefits, #design-selection
+  &-preamble, &-explanation, &-requirements, &-resources, &-preamble, &-explanation, &-requirements, &-resources, &-participation, &-benefits
     background: var(--section-background-color)
   &-intro h2
     background-color: var(--section-background-color)
@@ -34,26 +27,31 @@
       width: 100lvw
   &-summary
     padding: 1rem 2rem
-  &-explanation
-    p
+    p,h3
       +utilities.container
-
+  &-resources, &-requirements, &-preamble, &-explanation
+    +utilities.section-mixing("green")
 
 #design
+  &-archives, &-selection
+    background: var(--section-background-color)
+  &-selection
+    +utilities.section-mixing("white")
+    padding: 1.5rem 0
   &-archives
+    +utilities.section-mixing("green")
     ul
       list-style: none
-      padding: 2rem
       margin: 0
-    li
-      display: inline-block
-      margin: 0 0.5rem
-      a
-        +utilities.create-property("link__color", #black)
-        color: var(--link__color)
-        &:hover
+      li
+        display: inline-block
+        margin: 0 0.5rem
+        a
+          +utilities.create-property("link__color", #black)
           color: var(--link__color)
-          text-decoration: underline
+          &:hover
+            color: var(--link__color)
+            text-decoration: underline
 footer
   display: flex
   flex-direction: row
@@ -62,3 +60,5 @@ footer
   align-items: center
   padding: 1rem 0
   gap: 1rem
+  +utilities.section-mixing("yellow")
+  background: var(--section-background-color)

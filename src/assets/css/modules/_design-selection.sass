@@ -5,6 +5,7 @@ $svg-fill: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEzIiBoZWlnaHQ9Ijk2IiB2aW
 $svg-stroke: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEzIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMjEzIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTUuMDYxOSAxNS42NzY3QzE2Ljc0ODkgMTQuMjE2IDIwLjEyNDkgMTIuNzE3NiAyNC45MjA4IDExLjI3MDRDMjkuNjkyOSA5LjgzMDM4IDM1Ljc5ODcgOC40NjEyNiA0Mi44NzgzIDcuMjI1MTJDNTcuMDM2IDQuNzUzMTMgNzUuMDUyMyAyLjgxOTA2IDk0LjAwNzEgMS45MDc4MUMxMTIuOTYyIDAuOTk2NTY3IDEzMi44NDMgMS4xMDg3IDE1MC43MzMgMi43MjUzM0MxNjguNjM0IDQuMzQyOTkgMTg0LjQ5NSA3LjQ2MzUgMTk1LjQzOCAxMi41NDQyQzIwMC45NDMgMTUuMTAwMiAyMDUuMTA0IDIwLjc5MjIgMjA3LjgyNyAyNy45OTgxQzIxMC41NDcgMzUuMTkzMiAyMTEuODA0IDQzLjgyNTkgMjExLjU1MSA1Mi4xNDA4QzIxMS4yOTggNjAuNDYwMiAyMDkuNTM2IDY4LjQxNDggMjA2LjI2MSA3NC4yNzExQzIwMi45OSA4MC4xMTgyIDE5OC4yNSA4My44MTkyIDE5Mi4wMTQgODMuODE5MkMxNTguMzM2IDgzLjgxOTIgMTI1Ljg1MiA4Ny40MDc5IDk3Ljc1ODMgOTAuNTExNkM5My44MzcgOTAuOTQ0OCA5MC4wMDEzIDkxLjM2ODUgODYuMjU5NyA5MS43NzE4QzcwLjk3OTIgOTMuNDE4NiA1Ny4yNzg5IDk0LjcyMjIgNDUuNzI4IDk0LjkzNDZDMzQuMTY0NyA5NS4xNDc0IDI0LjgxOTggOTQuMjYzOSAxOC4yMTg0IDkxLjU3ODZDMTEuNjc0MSA4OC45MTY2IDcuMzEzODIgODMuNjQ3OCA0LjY3NjMgNzYuOTk1N0MyLjAzNTg3IDcwLjMzNjIgMS4xMzMyMSA2Mi4zMTI0IDEuNTA2OTUgNTQuMjE0OUMxLjg4MDUzIDQ2LjEyMDYgMy41MjgxOSAzNy45ODI0IDUuOTYyMTggMzEuMTA5OEM4LjQwMTUxIDI0LjIyMjEgMTEuNjA5IDE4LjY2NjUgMTUuMDYxOSAxNS42NzY3WiIgc3Ryb2tlPSJibGFjayIvPgo8L3N2Zz4K"
 
 #design-selection
+  +utilities.container
   a
     color: #111111
   .design-name
@@ -15,6 +16,8 @@ $svg-stroke: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEzIiBoZWlnaHQ9Ijk2IiB2
     display: grid
     gap: 1rem
     list-style: none
+    margin: 0
+    padding: 0
     +utilities.create-property("column-count", 1)
     grid-template-columns: repeat(var(--column-count), 1fr)
     +utilities.breakpoint-min("md")
@@ -62,3 +65,4 @@ $svg-stroke: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEzIiBoZWlnaHQ9Ijk2IiB2
     a
       margin: 0 0.5rem
       z-index: 50
+      font-size: 0.8rem
