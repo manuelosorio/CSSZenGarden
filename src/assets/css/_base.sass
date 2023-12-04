@@ -1,4 +1,5 @@
 @use "utilites/custom-properties"
+@use "utilites/breakpoints"
 @use "variables"
 /*!----------------------  2 [Base]  ----------------------
 /**
@@ -38,7 +39,7 @@ h2, h3
     visibility: visible
     -webkit-text-stroke: 1px #111
     padding: inherit
-  +breakpoint-min("md")
+  +breakpoints.breakpoint-min("md")
     font-size: 4rem
 
 p
