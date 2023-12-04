@@ -349,9 +349,13 @@ template {
 
 :root {
   --color-yellow: #FED955 ;
+  --color-yellow-200: #feca12 ;
+  --color-yellow-300: #ca9e01 ;
   --color-red: #C4423F ;
   --color-sea-green: #2EC4B6 ;
+  --color-white: #F3E8EE ;
   --section-heading-color: var(--color-yellow) ;
+  --m-top: 0 ;
 }
 
 html {
@@ -360,19 +364,25 @@ html {
 
 body {
   font: 400 1rem/1.5 "Gotham", sans-serif;
+  background: var(--color-white);
 }
 
 h2, h3 {
-  font: 800 3rem "Mid Century Sans", "Gotham", sans-serif;
+  font: 800 2.5rem "Mid Century Sans", "Gotham", sans-serif;
   position: relative;
   margin: 0;
   padding: 1.25rem 0;
   color: var(--section-heading-color);
 }
+@media (min-width: 48em) {
+  h2, h3 {
+    font-size: 3.5rem;
+  }
+}
 h2:before, h3:before {
   position: absolute;
-  top: 2px;
-  left: 3px;
+  top: -2px;
+  left: -2px;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -381,8 +391,9 @@ h2:before, h3:before {
   padding: inherit;
 }
 @media (min-width: 48em) {
-  h2, h3 {
-    font-size: 4rem;
+  h2:before, h3:before {
+    top: -3px;
+    left: -3px;
   }
 }
 
@@ -391,33 +402,145 @@ p {
   padding: 0;
 }
 p + p {
-  -webkit-margin-before: 2em;
-          margin-block-start: 2em;
+  --m-top: 1.25em;
 }
 
 div[role=article] {
-  --section-background-color: var(--color-red) ;
+  padding: 0.25rem 0;
   background-color: var(--section-background-color);
+}
+div[role=article] h3, div[role=article] p {
+  width: 80%;
+  margin: var(--m-top) auto;
+  max-width: 1200px;
 }
 
 a {
   text-decoration: none;
+  opacity: 0.85;
+  color: var(--link__color);
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  padding: 0.25em 0;
+}
+a:hover {
+  text-decoration: underline;
+  opacity: 1;
 }
 
 /*!----------------------  End Base  ---------------------- */
-/*----------------------  3 [Layout]  ---------------------- */
-/**
- * Layout Syntax Example:
- *
- * .l-container { ... }
- *
- * Sass Syntax:
- *
- * .l-
- *  &container
- *    ...
- * html code:
- * <section class="l-container"> ... </section> */
+/*----------------------  3 [Layout]  ----------------------*/
+.sidebar .wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "selection selection selection selection" "archives archives archives archives" "resources resources resources resources";
+}
+@media (min-width: 48em) {
+  .sidebar .wrapper {
+    row-gap: 2.5rem;
+    grid-template-areas: "selection selection selection selection" "archives archives resources resources";
+  }
+}
+
+.design-selection {
+  grid-area: selection;
+}
+
+.design-archives {
+  grid-area: archives;
+  padding: 0 2rem;
+}
+@media (min-width: 48em) {
+  .design-archives {
+    padding: 0;
+  }
+}
+.design-archives h3, .design-archives nav {
+  width: 100%;
+}
+@media (min-width: 48em) {
+  .design-archives h3, .design-archives nav {
+    width: 75%;
+    margin-left: auto;
+  }
+}
+
+.zen-resources {
+  grid-area: resources;
+  padding: 0 2rem;
+}
+@media (min-width: 48em) {
+  .zen-resources {
+    padding: 0;
+  }
+}
+
+.main.supporting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 48em) {
+  .main.supporting {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "explanation explanation explanation explanation explanation explanation explanation explanation" "participation participation participation participation participation benefits benefits benefits" "requirements requirements requirements requirements requirements requirements requirements requirements" "footer footer footer footer footer footer footer footer";
+  }
+}
+
+.explanation {
+  grid-area: explanation;
+}
+
+.participation {
+  grid-area: participation;
+}
+@media (min-width: 48em) {
+  .participation p {
+    line-height: 1.4;
+  }
+  .participation p + p {
+    --m-top: 1rem;
+  }
+}
+
+.benefits {
+  grid-area: benefits;
+}
+@media (min-width: 48em) {
+  .benefits {
+    margin-left: -2.25rem;
+  }
+  .benefits p {
+    line-height: 1.75;
+  }
+}
+
+.requirements {
+  grid-area: requirements;
+}
+.requirements h3, .requirements p {
+  width: 80%;
+  margin: var(--m-top) auto;
+  max-width: 1200px;
+}
+@media (min-width: 48em) {
+  .requirements {
+    margin-left: -2.25rem;
+  }
+  .requirements p {
+    line-height: 1.75;
+  }
+}
+
+footer {
+  grid-area: footer;
+}
+
 /*----------------------  End Layout  ----------------------*/
 /*!----------------------  3 [Modules]  ---------------------- */
 .intro {
@@ -428,7 +551,8 @@ a {
   font-size: 0;
   position: relative;
   height: 12.5rem;
-  width: 100%;
+  width: 90%;
+  margin: 1.5rem auto 1.25rem;
 }
 .intro h1:after {
   content: "";
@@ -443,6 +567,12 @@ a {
           transform: translate(-50%, -50%);
   height: 100%;
   width: 100%;
+  padding: 1rem 3rem;
+}
+@media (min-width: 48em) {
+  .intro h1:after {
+    left: 50%;
+  }
 }
 
 #zen-intro h2:before {
@@ -481,6 +611,11 @@ a {
   content: "Select a Design:";
 }
 
+#design-selection {
+  width: 80%;
+  margin: var(--m-top) auto;
+  max-width: 1200px;
+}
 #design-selection a {
   color: #111111;
 }
@@ -493,6 +628,8 @@ a {
   display: grid;
   gap: 1rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
   --column-count: 1 ;
   grid-template-columns: repeat(var(--column-count), 1fr);
 }
@@ -565,25 +702,23 @@ a {
 #design-selection li a {
   margin: 0 0.5rem;
   z-index: 50;
-}
-
-.page-wrapper {
-  overflow-x: hidden;
+  font-size: 0.8rem;
 }
 
 #zen-summary, #zen-intro h2 {
   --section-background-color: var(--color-yellow);
   --section-heading-color: var(--color-sea-green);
+  --link__color: var(--section-heading-color);
 }
-#zen-participation, #zen-benefits, #zen #design-selection {
-  --section-background-color: white;
+#zen-summary a, #zen-intro h2 a {
+  color: var(--color-sea-green);
+}
+#zen-participation, #zen-benefits {
+  --section-background-color: transparent;
   --section-heading-color: var(--color-red);
+  --link__color: var(--section-heading-color);
 }
-#zen-preamble, #zen-explanation, #zen-requirements, #zen-resources, #zen #design-archives {
-  --section-background-color: var(--color-sea-green);
-  --section-heading-color: var(--color-yellow);
-}
-#zen-preamble, #zen-explanation, #zen-requirements, #zen #design-archives, #zen-resources, #zen-participation, #zen-benefits, #zen #design-selection {
+#zen-preamble, #zen-explanation, #zen-requirements, #zen-resources, #zen-preamble, #zen-explanation, #zen-requirements, #zen-resources, #zen-participation, #zen-benefits {
   background: var(--section-background-color);
 }
 #zen-intro h2 {
@@ -591,7 +726,7 @@ a {
   position: relative;
   padding: 2.25rem 0 0;
   width: 80%;
-  margin: 0 auto;
+  margin: var(--m-top) auto;
   max-width: 1200px;
 }
 #zen-intro h2:after {
@@ -610,26 +745,54 @@ a {
 #zen-summary {
   padding: 1rem 2rem;
 }
-#zen-explanation p {
+#zen-summary p, #zen-summary h3 {
   width: 80%;
-  margin: 0 auto;
+  margin: var(--m-top) auto;
   max-width: 1200px;
 }
+#zen-resources, #zen-requirements, #zen-preamble, #zen-explanation {
+  --section-background-color: var(--color-sea-green);
+  --section-heading-color: var(--color-yellow);
+}
+#zen-resources a, #zen-requirements a, #zen-preamble a, #zen-explanation a {
+  --link__color: var(--color-white);
+}
+#zen-resources a:hover, #zen-requirements a:hover, #zen-preamble a:hover, #zen-explanation a:hover {
+  background: #444444;
+}
 
+#design-archives, #design-selection {
+  background: var(--section-background-color);
+}
+#design-selection {
+  --section-background-color: transparent;
+  --section-heading-color: var(--color-red);
+  --link__color: var(--section-heading-color);
+  padding: 1.5rem 0;
+}
+#design-archives {
+  --section-background-color: var(--color-sea-green);
+  --section-heading-color: var(--color-yellow);
+}
+#design-archives a {
+  --link__color: var(--color-white);
+}
+#design-archives a:hover {
+  background: #444444;
+}
 #design-archives ul {
   list-style: none;
-  padding: 2rem;
   margin: 0;
 }
-#design-archives li {
+#design-archives ul li {
   display: inline-block;
   margin: 0 0.5rem;
 }
-#design-archives li a {
+#design-archives ul li a {
   --link__color: #black ;
   color: var(--link__color);
 }
-#design-archives li a:hover {
+#design-archives ul li a:hover {
   color: var(--link__color);
   text-decoration: underline;
 }
@@ -652,6 +815,13 @@ footer {
           align-items: center;
   padding: 1rem 0;
   gap: 1rem;
+  --section-background-color: var(--color-yellow);
+  --section-heading-color: var(--color-sea-green);
+  --link__color: var(--section-heading-color);
+  background: var(--section-background-color);
+}
+footer a {
+  color: var(--color-sea-green);
 }
 
 .button, #zen-resources .view-css a, #zen-summary a, #design-archives a, .button--round, .zen-accessibility, .zen-validate-html, .zen-validate-css, .zen-license, .zen-github {
@@ -713,6 +883,10 @@ footer {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+#zen-summary a, #design-archives a {
+  margin-bottom: 1rem;
 }
 
 #zen-resources ul {
