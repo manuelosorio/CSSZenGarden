@@ -417,7 +417,6 @@ div[role=article] h3, div[role=article] p {
 
 a {
   text-decoration: none;
-  opacity: 0.85;
   color: var(--link__color);
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
@@ -425,7 +424,6 @@ a {
 }
 a:hover {
   text-decoration: underline;
-  opacity: 1;
 }
 
 /*!----------------------  End Base  ---------------------- */
