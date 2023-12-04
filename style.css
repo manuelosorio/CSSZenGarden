@@ -1,0 +1,766 @@
+/*!
+ * *  Project: CSS Zen Garden
+ * *  Author: Manuel Osorio
+ * *  Version: 1.0.2
+ * *  Licensed under MIT Open Source
+ * * */
+/*----------------------  Table Of Contents ---------------------- */
+/*!
+ * 1 [Vendor]
+ * 2 [Base]
+ * 3 [Layout]
+ * 4 [Modules]
+ * 5 [States] */
+/*!----------------------  1 [Vendor]  ---------------------- */
+@import url("https://osorio-css-zen-garden.s3.amazonaws.com/fonts.css?v=4");
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/*!----------------------  End Vendor  ---------------------- */
+/*!----------------------  2 [Base]  ---------------------- */
+/**
+ * Base syntax should not contain any classes, id or use attribute selectors of any kind.
+ * Resets or basic styles for elements belong here
+ *
+ * Example:
+ *  header { ... } */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+* + * {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-yellow: #FED955 ;
+  --color-red: #C4423F ;
+  --color-sea-green: #2EC4B6 ;
+  --section-heading-color: var(--color-yellow) ;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font: 400 1rem/1.5 "Gotham", sans-serif;
+}
+
+h2, h3 {
+  font: 800 2.85rem "Gotham";
+  position: relative;
+  margin: 0;
+  color: var(--section-heading-color);
+}
+h2:before, h3:before {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  visibility: visible;
+  -webkit-text-stroke: 1px #111;
+  padding: inherit;
+}
+@media (min-width: 48em) {
+  h2, h3 {
+    font-size: 4rem;
+  }
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+p + p {
+  -webkit-margin-before: 2em;
+          margin-block-start: 2em;
+}
+
+div[role=article] {
+  --section-background-color: var(--color-red) ;
+  background-color: var(--section-background-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+/*!----------------------  End Base  ---------------------- */
+/*----------------------  3 [Layout]  ---------------------- */
+/**
+ * Layout Syntax Example:
+ *
+ * .l-container { ... }
+ *
+ * Sass Syntax:
+ *
+ * .l-
+ *  &container
+ *    ...
+ * html code:
+ * <section class="l-container"> ... </section> */
+/*----------------------  End Layout  ----------------------*/
+/*!----------------------  3 [Modules]  ---------------------- */
+.intro {
+  margin: 0;
+}
+.intro h1 {
+  color: transparent;
+  font-size: 0;
+  position: relative;
+  height: 12.5rem;
+  width: 100%;
+}
+.intro h1:after {
+  content: "";
+  display: block;
+  background: url("images/Logo.svg") no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+}
+
+#zen-intro h2:before {
+  content: "The Beauty of CSS Design";
+}
+
+#zen-preamble h3:before {
+  content: "The Road to Enlightenment";
+}
+
+#zen-explanation h3:before {
+  content: "So What is This About?";
+}
+
+#zen-requirements h3:before {
+  content: "Requirements";
+}
+
+#zen-resources h3:before {
+  content: "Resources:";
+}
+
+#design-archives h3:before {
+  content: "Archives:";
+}
+
+#zen-participation h3:before {
+  content: "Participation";
+}
+
+#zen-benefits h3:before {
+  content: "Benefits";
+}
+
+#design-selection h3:before {
+  content: "Select a Design:";
+}
+
+#design-selection a {
+  color: #111111;
+}
+#design-selection .design-name {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+#design-selection ul {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  --column-count: 1 ;
+  grid-template-columns: repeat(var(--column-count), 1fr);
+}
+@media (min-width: 48em) {
+  #design-selection ul {
+    --column-count: 2;
+  }
+}
+@media (min-width: 64em) {
+  #design-selection ul {
+    --column-count: 3;
+  }
+}
+@media (min-width: 64em) {
+  #design-selection ul {
+    --column-count: 4;
+  }
+}
+#design-selection li {
+  position: relative;
+  width: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.75rem;
+  z-index: 20;
+}
+#design-selection li:hover::before, #design-selection li:hover::after {
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+#design-selection li::before, #design-selection li::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  -webkit-transition: ease-in-out 200ms;
+  transition: ease-in-out 200ms;
+}
+#design-selection li::before {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEzIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMjEzIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTQuNzM0NiAxNS4yOTg5QzI4LjkzMjMgMy4wMDU1OSAxNTEuNTYxIC04LjM3OTIgMTk1LjY0OCAxMi4wOTA5QzIxOC4zNCAyMi42MjcxIDIxNy45MDggODQuMzE5NSAxOTIuMDE0IDg0LjMxOTVDMTE1LjMyMiA4NC4zMTk1IDQ0LjgzMTcgMTAyLjk0NCAxOC4wMyA5Mi4wNDJDLTguNzcxODQgODEuMTM5NiAwLjUzNjkxOSAyNy41OTIzIDE0LjczNDYgMTUuMjk4OVoiIGZpbGw9IiNGRUQ5NTUiLz4KPC9zdmc+Cg==");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+          transform: rotate(3deg);
+}
+#design-selection li::after {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEzIiBoZWlnaHQ9Ijk2IiB2aWV3Qm94PSIwIDAgMjEzIDk2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTUuMDYxOSAxNS42NzY3QzE2Ljc0ODkgMTQuMjE2IDIwLjEyNDkgMTIuNzE3NiAyNC45MjA4IDExLjI3MDRDMjkuNjkyOSA5LjgzMDM4IDM1Ljc5ODcgOC40NjEyNiA0Mi44NzgzIDcuMjI1MTJDNTcuMDM2IDQuNzUzMTMgNzUuMDUyMyAyLjgxOTA2IDk0LjAwNzEgMS45MDc4MUMxMTIuOTYyIDAuOTk2NTY3IDEzMi44NDMgMS4xMDg3IDE1MC43MzMgMi43MjUzM0MxNjguNjM0IDQuMzQyOTkgMTg0LjQ5NSA3LjQ2MzUgMTk1LjQzOCAxMi41NDQyQzIwMC45NDMgMTUuMTAwMiAyMDUuMTA0IDIwLjc5MjIgMjA3LjgyNyAyNy45OTgxQzIxMC41NDcgMzUuMTkzMiAyMTEuODA0IDQzLjgyNTkgMjExLjU1MSA1Mi4xNDA4QzIxMS4yOTggNjAuNDYwMiAyMDkuNTM2IDY4LjQxNDggMjA2LjI2MSA3NC4yNzExQzIwMi45OSA4MC4xMTgyIDE5OC4yNSA4My44MTkyIDE5Mi4wMTQgODMuODE5MkMxNTguMzM2IDgzLjgxOTIgMTI1Ljg1MiA4Ny40MDc5IDk3Ljc1ODMgOTAuNTExNkM5My44MzcgOTAuOTQ0OCA5MC4wMDEzIDkxLjM2ODUgODYuMjU5NyA5MS43NzE4QzcwLjk3OTIgOTMuNDE4NiA1Ny4yNzg5IDk0LjcyMjIgNDUuNzI4IDk0LjkzNDZDMzQuMTY0NyA5NS4xNDc0IDI0LjgxOTggOTQuMjYzOSAxOC4yMTg0IDkxLjU3ODZDMTEuNjc0MSA4OC45MTY2IDcuMzEzODIgODMuNjQ3OCA0LjY3NjMgNzYuOTk1N0MyLjAzNTg3IDcwLjMzNjIgMS4xMzMyMSA2Mi4zMTI0IDEuNTA2OTUgNTQuMjE0OUMxLjg4MDUzIDQ2LjEyMDYgMy41MjgxOSAzNy45ODI0IDUuOTYyMTggMzEuMTA5OEM4LjQwMTUxIDI0LjIyMjEgMTEuNjA5IDE4LjY2NjUgMTUuMDYxOSAxNS42NzY3WiIgc3Ryb2tlPSJibGFjayIvPgo8L3N2Zz4K");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: -1;
+  -webkit-transform: rotate(-3deg);
+      -ms-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+}
+#design-selection li a {
+  margin: 0 0.5rem;
+  z-index: 50;
+}
+
+.page-wrapper {
+  overflow-x: hidden;
+}
+
+#zen-intro h2 {
+  background-color: var(--section-background-color);
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2.25rem 0 0;
+}
+#zen-intro h2:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -13%;
+  right: 0;
+  background-color: var(--color-yellow);
+  padding: 1rem;
+  z-index: -1;
+  height: 100%;
+  width: 100lvw;
+}
+
+#zen-summary {
+  padding: 1rem 2rem;
+}
+
+#zen-summary, #zen-intro h2 {
+  --section-background-color: var(--color-yellow);
+  --section-heading-color: var(--color-sea-green);
+}
+
+#zen-participation, #zen-benefits, #design-selection {
+  --section-background-color: white;
+  --section-heading-color: var(--color-red);
+}
+
+#zen-preamble, #zen-explanation, #zen-requirements, #design-archives, #zen-resources {
+  --section-background-color: var(--color-sea-green);
+  --section-heading-color: var(--color-yellow);
+}
+
+#zen-preamble, #zen-explanation, #zen-requirements, #design-archives, #zen-resources, #zen-participation, #zen-benefits, #design-selection {
+  background: var(--section-background-color);
+}
+
+#design-archives ul {
+  list-style: none;
+  padding: 2rem;
+  margin: 0;
+}
+#design-archives ul li {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+#design-archives ul li a {
+  --link__color: #black ;
+  color: var(--link__color);
+}
+#design-archives ul li a:hover {
+  color: var(--link__color);
+  text-decoration: underline;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.button, #zen-resources .view-css a, #zen-summary a, #design-archives a, .button--round, .zen-accessibility, .zen-validate-html, .zen-validate-css, .zen-license, .zen-github {
+  display: inline-block;
+  padding: 0.25rem 1.5rem;
+  --button__background: var(--section-heading-color) ;
+  --button__color: #ededed ;
+  background: var(--button__background);
+  color: var(--button__color);
+  position: relative;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+  margin: auto 0.75rem;
+  --offset: -5px ;
+}
+.button:before, #zen-resources .view-css a:before, #zen-summary a:before, #design-archives a:before, .button--round:before, .zen-accessibility:before, .zen-validate-html:before, .zen-validate-css:before, .zen-license:before, .zen-github:before {
+  content: "";
+  border: 1px solid #111;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: var(--offset);
+  left: var(--offset);
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+.button:hover, #zen-resources .view-css a:hover, #zen-summary a:hover, #design-archives a:hover, .button--round:hover, .zen-accessibility:hover, .zen-validate-html:hover, .zen-validate-css:hover, .zen-license:hover, .zen-github:hover {
+  top: var(--offset);
+  left: var(--offset);
+}
+.button:hover:before, #zen-resources .view-css a:hover:before, #zen-summary a:hover:before, #design-archives a:hover:before, .button--round:hover:before, .zen-accessibility:hover:before, .zen-validate-html:hover:before, .zen-validate-css:hover:before, .zen-license:hover:before, .zen-github:hover:before {
+  top: 0;
+  left: 0;
+}
+.button--round, .zen-accessibility, .zen-validate-html, .zen-validate-css, .zen-license, .zen-github {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 1rem;
+  color: transparent;
+  --button-icon: url($icon-a11y);
+}
+.button--round:before, .zen-accessibility:before, .zen-validate-html:before, .zen-validate-css:before, .zen-license:before, .zen-github:before {
+  border-radius: inherit;
+}
+.button--round:after, .zen-accessibility:after, .zen-validate-html:after, .zen-validate-css:after, .zen-license:after, .zen-github:after {
+  content: "";
+  background-image: var(--button-icon);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#zen-resources ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 1rem;
+}
+#zen-resources .view-css {
+  display: block;
+  width: 100%;
+}
+#zen-resources .view-css a {
+  color: #111;
+}
+#zen-resources a {
+  color: #111;
+}
+
+.zen-accessibility, .zen-validate-html, .zen-validate-css, .zen-license, .zen-github {
+  width: 5.5rem;
+  height: 5.5rem;
+  --button__background: var(--color-sea-green);
+  margin: 1rem;
+}
+.zen-accessibility {
+  --button-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtcGVyc29uLXN0YW5kaW5nIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjUiIHI9IjEiLz48cGF0aCBkPSJtOSAyMCAzLTYgMyA2Ii8+PHBhdGggZD0ibTYgOCA2IDIgNi0yIi8+PHBhdGggZD0iTTEyIDEwdjQiLz48L3N2Zz4=);
+}
+.zen-validate-html {
+  --button-icon: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjMDAwIj48cGF0aCBkPSJtMTIuMDAwNSAyMi43MWMtLjE2IDAtLjMyLS4wMi0uNDgtLjA3bC02LjA4MDAxLTEuNzRjLS42OS0uMi0xLjE4MDAxLS43OC0xLjI2MDAxLTEuNDlsLTEuNzk5OTktMTYuMjJjLS4wNS0uNDkuMS0uOTkuNDQtMS4zNi4zMy0uMzcuODA5OTktLjU4IDEuMjk5OTktLjU4aDE1Ljc3MDAyYy41IDAgLjk3LjIxIDEuMy41OHMuNDkuODcuNDQgMS4zNmwtMS44IDE2LjIyYy0uMDguNzEtLjU3IDEuMjktMS4yNiAxLjQ5bC02LjA4IDEuNzRjLS4xNy4wNS0uMzMuMDctLjQ5LjA3em0tNy44ODAwMi0xOS45NmMtLjEgMC0uMTYuMDUtLjE5LjA4cy0uMDcuMS0uMDYuMTlsMS43OTk5OSAxNi4yMmMuMDEuMS4wNzk5OS4xOS4xNzk5OS4yMWw2LjA4MDA0IDEuNzRjLjA0LjAxLjA5LjAxLjE0IDBsNi4wOC0xLjc0Yy4xLS4wMy4xNy0uMTEuMTgtLjIxbDEuOC0xNi4yMmMuMDEtLjEtLjA0LS4xNi0uMDYtLjE5LS4wMy0uMDMtLjA5LS4wOC0uMTktLjA4eiIvPjxwYXRoIGQ9Im0xMS43NDk4IDE4Yy0uMDcgMC0uMTQtLjAxLS4yMS0uMDNsLTMuNS0xYy0uMzItLjA5LS41Mzk5OC0uMzktLjUzOTk4LS43MnYtMmMwLS40MS4zNC0uNzUuNzUtLjc1cy43NS4zNC43NS43NXYxLjQzbDIuNzQ5OTguNzkgMi44LS44LjM3LTMuNjdoLTYuNjY5OThjLS4zOCAwLS43LS4yOS0uNzUtLjY3bC0uNS00LjVjLS4wMi0uMjEuMDQwMDEtLjQyLjE5MDAxLS41OC4xNC0uMTYuMzQ5OTktLjI1LjU1OTk5LS4yNWg4LjQ5OTk4Yy40MSAwIC43NS4zNC43NS43NXMtLjM0Ljc1LS43NS43NWgtNy42NTk5NWwuMzI5OTYgM2g2LjgyOTk5Yy4yMSAwIC40MS4wOS41Ni4yNS4xNC4xNi4yMS4zNy4xOS41OGwtLjUgNWMtLjAzLjMxLS4yNC41Ni0uNTQuNjVsLTMuNSAxYy0uMDcuMDEtLjE0LjAyLS4yMS4wMnoiLz48L2c+PC9zdmc+);
+}
+.zen-validate-css {
+  --button-icon: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjE1IiB2aWV3Qm94PSIwIDAgMTUgMTUiIHdpZHRoPSIxNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtLjUuNXYtLjVjLS4xMzk4MjYgMC0uMjczMjY0LjA1ODU0OTgtLjM2Nzk0MS4xNjE0NDUtLjA5NDY3NzYuMTAyODk2LS4xNDE5NDM3Ny4yNDA3MzUtLjEzMDMzMTg3LjM4MDA3OHptMTQgMCAuNDk4My4wNDE1MjNjLjAxMTYtLjEzOTM0My0uMDM1Ny0uMjc3MTgyLS4xMzA0LS4zODAwNzgtLjA5NDYtLjEwMjg5NTItLjIyODEtLjE2MTQ0NS0uMzY3OS0uMTYxNDQ1em0tMSAxMiAuMTU4MS40NzQzYy4xODk4LS4wNjMyLjMyMzYtLjIzMzUuMzQwMi0uNDMyOHptLTYgMi0uMTU4MTEuNDc0M2MuMTAyNjMuMDM0My4yMTM1OS4wMzQzLjMxNjIyIDB6bS02LTItLjQ5ODI3LjA0MTVjLjAxNjYxLjE5OTMuMTUwNDEuMzY5Ni4zNDAxNi40MzI4em05LTloLjV2LS41aC0uNXptMCA2IC4xNTgxLjQ3NDM0LjM0MTktLjExMzk2di0uMzYwMzh6bS0zIDEtLjE1ODExLjQ3NDMuMTU4MTEuMDUyNy4xNTgxMS0uMDUyN3ptLTMtMWgtLjV2LjM2MDM4bC4zNDE4OS4xMTM5NnptLTQtOC41aDE0di0xaC0xNHptMTMuNTAxNy0uNTQxNTIzLTEgMTIuMDAwMDIzLjk5NjYuMDgzIDEtMTEuOTk5OTc3em0tLjY1OTggMTEuNTY3MjIzLTYuMDAwMDEgMiAuMzE2MjIuOTQ4NiA1Ljk5OTk5LTJ6bS01LjY4Mzc5IDItNi0yLS4zMTYyMi45NDg2IDYgMnptLTUuNjU5ODQtMS41NjcyLS45OTk5OTctMTIuMDAwMDIzLS45OTY1NDU4Ny4wODMwNDYgMS4wMDAwMDI4NyAxMS45OTk5Nzd6bTguNTAxNzMtOS40NTg1aC02LjV2MWg2LjV6bS00LjUgNGg0LjV2LTFoLTQuNXptNC0uNXYzaDF2LTN6bS4zNDE5IDIuNTI1NjYtMy4wMDAwMSAxLjAwMDA0LjMxNjIyLjk0ODYgMi45OTk5OS0uOTk5OTZ6bS0yLjY4Mzc5IDEuMDAwMDQtMy0xLjAwMDA0LS4zMTYyMi45NDg2OCAzIC45OTk5NnptLTIuNjU4MTEtLjUyNTd2LTEuNWgtMXYxLjV6bTUtNnYzaDF2LTN6IiBmaWxsPSIjMDAwIi8+PC9zdmc+);
+}
+.zen-license {
+  --button-icon: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHN0cm9rZS13aWR0aD0iMS41IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMiAyMkMxNy41MjI4IDIyIDIyIDE3LjUyMjggMjIgMTJDMjIgNi40NzcxNSAxNy41MjI4IDIgMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI4IDYuNDc3MTUgMjIgMTIgMjJaIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMC41IDkuMTcwNzFDMTAuMTg3MiA5LjA2MDE1IDkuODUwNjQgOSA5LjUgOUM3Ljg0MzE1IDkgNi41IDEwLjM0MzEgNi41IDEyQzYuNSAxMy42NTY5IDcuODQzMTUgMTUgOS41IDE1QzkuODUwNjQgMTUgMTAuMTg3MiAxNC45Mzk4IDEwLjUgMTQuODI5MyIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTYuNzUgOS4xNzA3MUMxNi40MzcyIDkuMDYwMTUgMTYuMTAwNiA5IDE1Ljc1IDlDMTQuMDkzMSA5IDEyLjc1IDEwLjM0MzEgMTIuNzUgMTJDMTIuNzUgMTMuNjU2OSAxNC4wOTMxIDE1IDE1Ljc1IDE1QzE2LjEwMDYgMTUgMTYuNDM3MiAxNC45Mzk4IDE2Ljc1IDE0LjgyOTMiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==);
+}
+.zen-github {
+  --button-icon: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWdpdGh1YiI+PHBhdGggZD0iTTE1IDIydi00YTQuOCA0LjggMCAwIDAtMS0zLjVjMyAwIDYtMiA2LTUuNS4wOC0xLjI1LS4yNy0yLjQ4LTEtMy41LjI4LTEuMTUuMjgtMi4zNSAwLTMuNSAwIDAtMSAwLTMgMS41LTIuNjQtLjUtNS4zNi0uNS04IDBDNiAyIDUgMiA1IDJjLS4zIDEuMTUtLjMgMi4zNSAwIDMuNUE1LjQwMyA1LjQwMyAwIDAgMCA0IDljMCAzLjUgMyA1LjUgNiA1LjUtLjM5LjQ5LS42OCAxLjA1LS44NSAxLjY1LS4xNy42LS4yMiAxLjIzLS4xNSAxLjg1djQiLz48cGF0aCBkPSJNOSAxOGMtNC41MSAyLTUtMi03LTIiLz48L3N2Zz4=);
+}
+
+/*!----------------------  End Modules  ---------------------- */
+/*!----------------------  3 [States]  ---------------------- */
+/*!----------------------  End States  ---------------------- */
+/*# sourceMappingURL=style.css.map */
