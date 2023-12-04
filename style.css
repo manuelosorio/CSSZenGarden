@@ -622,6 +622,12 @@ footer {
   font-weight: 600;
   margin: 0.5rem 0;
 }
+@media (min-width: 48em) {
+  #design-selection .design-name {
+    font-size: 1.15rem;
+    margin: 0.05rem 0;
+  }
+}
 #design-selection ul {
   display: grid;
   gap: 1rem;
@@ -641,7 +647,7 @@ footer {
     --column-count: 3;
   }
 }
-@media (min-width: 64em) {
+@media (min-width: 87.5em) {
   #design-selection ul {
     --column-count: 4;
   }
