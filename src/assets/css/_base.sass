@@ -1,5 +1,4 @@
-@use "utilites/custom-properties"
-@use "utilites/breakpoints"
+@use "utilites"
 @use "variables"
 /*!----------------------  2 [Base]  ----------------------
 /**
@@ -16,10 +15,10 @@
     margin: 0
     padding: 0
 \:root
-  +custom-properties.create-property("color-yellow", "#FED955")
-  +custom-properties.create-property("color-red", "#C4423F")
-  +custom-properties.create-property("color-sea-green", "#2EC4B6")
-  +custom-properties.create-property("section-heading-color", variables.$color-yellow)
+  +utilites.create-property("color-yellow", "#FED955")
+  +utilites.create-property("color-red", "#C4423F")
+  +utilites.create-property("color-sea-green", "#2EC4B6")
+  +utilites.create-property("section-heading-color", variables.$color-yellow)
 html
   font-size: 100%
 body
@@ -39,7 +38,7 @@ h2, h3
     visibility: visible
     -webkit-text-stroke: 1px #111
     padding: inherit
-  +breakpoints.breakpoint-min("md")
+  +utilites.breakpoint-min("md")
     font-size: 4rem
 
 p
@@ -48,7 +47,7 @@ p
   + p
     margin-block-start: 2em
 div[role="article"]
-  +custom-properties.create-property("section-background-color", variables.$color-red)
+  +utilites.create-property("section-background-color", variables.$color-red)
   background-color: var(--section-background-color)
 a
   text-decoration: none
