@@ -1,43 +1,48 @@
 @use "../variables"
 @use "../utilites"
+
+
 .page-wrapper
   overflow-x: hidden
-#zen-intro h2
-  background-color: var(--section-background-color)
-  position: relative
-  padding: 2.25rem 0 0
-  +utilites.container
-  &:after
-    content: ''
-    display: block
-    position: absolute
-    top: 0
-    left: -13%
-    right: 0
-    background-color: variables.$color-yellow
-    padding: 1rem
-    z-index: -1
-    height: 100%
-    width: 100lvw
-#zen-summary
-  padding: 1rem 2rem
-#zen-summary, #zen-intro h2
-  +utilites.section-mixing("yellow")
-#zen-participation, #zen-benefits, #design-selection
-  +utilites.section-mixing("white")
-#zen-preamble, #zen-explanation, #zen-requirements, #design-archives, #zen-resources
-  +utilites.section-mixing("green")
 
 
-#zen-preamble, #zen-explanation, #zen-requirements, #design-archives, #zen-resources, #zen-participation, #zen-benefits, #design-selection
-  background: var(--section-background-color)
+#zen
+  &-summary, &-intro h2
+    +utilites.section-mixing("yellow")
+  &-participation, &-benefits, #design-selection
+    +utilites.section-mixing("white")
+  &-preamble, &-explanation, &-requirements, &-resources, #design-archives
+    +utilites.section-mixing("green")
+  &-preamble, &-explanation, &-requirements, #design-archives, &-resources, &-participation, &-benefits, #design-selection
+    background: var(--section-background-color)
+  &-intro h2
+    background-color: var(--section-background-color)
+    position: relative
+    padding: 2.25rem 0 0
+    +utilites.container
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      left: -13%
+      right: 0
+      background-color: variables.$color-yellow
+      padding: 1rem
+      z-index: -1
+      height: 100%
+      width: 100lvw
+  &-summary
+    padding: 1rem 2rem
 
 
-#design-archives
-  ul
-    list-style: none
-    padding: 2rem
-    margin: 0
+
+#design
+  &-archives
+    ul
+      list-style: none
+      padding: 2rem
+      margin: 0
     li
       display: inline-block
       margin: 0 0.5rem
