@@ -571,6 +571,21 @@ a {
   overflow-x: hidden;
 }
 
+#zen-summary, #zen-intro h2 {
+  --section-background-color: var(--color-yellow);
+  --section-heading-color: var(--color-sea-green);
+}
+#zen-participation, #zen-benefits, #zen #design-selection {
+  --section-background-color: white;
+  --section-heading-color: var(--color-red);
+}
+#zen-preamble, #zen-explanation, #zen-requirements, #zen-resources, #zen #design-archives {
+  --section-background-color: var(--color-sea-green);
+  --section-heading-color: var(--color-yellow);
+}
+#zen-preamble, #zen-explanation, #zen-requirements, #zen #design-archives, #zen-resources, #zen-participation, #zen-benefits, #zen #design-selection {
+  background: var(--section-background-color);
+}
 #zen-intro h2 {
   background-color: var(--section-background-color);
   position: relative;
@@ -592,28 +607,13 @@ a {
   height: 100%;
   width: 100lvw;
 }
-
 #zen-summary {
   padding: 1rem 2rem;
 }
-
-#zen-summary, #zen-intro h2 {
-  --section-background-color: var(--color-yellow);
-  --section-heading-color: var(--color-sea-green);
-}
-
-#zen-participation, #zen-benefits, #design-selection {
-  --section-background-color: white;
-  --section-heading-color: var(--color-red);
-}
-
-#zen-preamble, #zen-explanation, #zen-requirements, #design-archives, #zen-resources {
-  --section-background-color: var(--color-sea-green);
-  --section-heading-color: var(--color-yellow);
-}
-
-#zen-preamble, #zen-explanation, #zen-requirements, #design-archives, #zen-resources, #zen-participation, #zen-benefits, #design-selection {
-  background: var(--section-background-color);
+#zen-explanation p {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 #design-archives ul {
@@ -621,15 +621,15 @@ a {
   padding: 2rem;
   margin: 0;
 }
-#design-archives ul li {
+#design-archives li {
   display: inline-block;
   margin: 0 0.5rem;
 }
-#design-archives ul li a {
+#design-archives li a {
   --link__color: #black ;
   color: var(--link__color);
 }
-#design-archives ul li a:hover {
+#design-archives li a:hover {
   color: var(--link__color);
   text-decoration: underline;
 }
