@@ -1,23 +1,8 @@
 /*----------------------  3 [Layout]  ----------------------*/
 @use "utilities";
-//.page-wrapper {
-//  overflow-x: hidden;
-//  display: grid;
-//  grid-template-columns: repeat(6, 1fr);
-//  grid-template-areas:
-//    "intro intro intro intro intro intro"
-//    "preamble preamble preamble preamble preamble preamble"
-//  "supporting supporting supporting supporting supporting supporting";
-//}
-//.into {
-//  grid-area: intro;
-//}
-//.preamble {
-//  grid-area: preamble;
-//}
-//.supporting {
-//  grid-area: supporting;
-//}
+.page-wrapper {
+  overflow-x: hidden;
+}
 .sidebar .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
