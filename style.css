@@ -428,6 +428,10 @@ a:hover {
 
 /*!----------------------  End Base  ---------------------- */
 /*----------------------  3 [Layout]  ----------------------*/
+.page-wrapper {
+  overflow-x: hidden;
+}
+
 .sidebar .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -738,13 +742,13 @@ footer {
   display: block;
   position: absolute;
   top: 0;
-  left: -13%;
+  left: -400%;
   right: 0;
   background-color: var(--color-yellow);
   padding: 1rem;
   z-index: -1;
   height: 100%;
-  width: 100lvw;
+  width: 1000%;
 }
 #zen-summary {
   padding: 1rem 2rem;
